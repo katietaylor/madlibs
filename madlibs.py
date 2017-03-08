@@ -58,14 +58,14 @@ def show_madlib():
     person_input = request.args.get("person")
     color_input = request.args.get("color")
     noun_input = request.args.get("noun")
-    adjective_input = request.args.get("adjective")
+    adjectives_input = request.args.getlist("adjective")
     place_input = request.args.get("place")
     verb_input = request.args.get("verb")
 
     madlib_template = choice(["madlib.html", "madlib_2.html"])
 
     return render_template(madlib_template, person=person_input, color=color_input,
-                           noun=noun_input, adjective=adjective_input,
+                           noun=noun_input, adjectives=adjectives_input,
                            place=place_input, verb=verb_input)
 
 

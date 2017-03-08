@@ -1,4 +1,30 @@
-<!doctype html>
+{% extends 'base.html' %}
+{% block title %}Madlibs{% endblock %}
+{% block header %}Welcome to Madlibs!{% endblock %}
+
+{% block content %}<form action="/madlib">
+  Person: <input type="text" name="person"><br><br>
+  Color: <select name="color">
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+    <option value="yellow">Yellow</option>
+  </select><br><br>
+  Noun: <input type="text" name="noun"><br><br>
+  Adjective: 
+  <input type="checkbox" name="adjective" value="big">Big
+  <input type="checkbox" name="adjective" value="wonderful">Wonderful
+  <input type="checkbox" name="adjective" value="hungry">Hungry
+  <input type="checkbox" name="adjective" value="shocking">Shocking<br><br>
+  Place: <input type="text" name="place"><br><br>
+  Past-Tense Verb: <input type="text" name="verb"><br><br>
+  <input type="submit">
+</form>
+{% endblock %}
+
+
+
+<!-- <!doctype html>
 <html>
 <head>
   <title>Madlibs</title>
@@ -24,3 +50,4 @@
 
 </body>
 </html>
+ -->

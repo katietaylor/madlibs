@@ -5,11 +5,16 @@
 </head>
 <body>
     Hi {{ person }}! I think you're 
-    <ul>
         {% for compliment in compliments %}
-            <li>{{ compliment }}!</li>
+            {% if compliment == compliments[-1] %}
+                and&nbsp;{{ compliment }}
+            {% elif compliment == compliments[-2] %}
+                {{ compliment }}
+            {% else %}
+                {{ compliment }},
+            {% endif %}
         {% endfor %}
-    </ul><br>
+    <br>
     <form action="/game">
         Would you like to play the game?
         <input type="radio" name="play-game" value="yes">Yes

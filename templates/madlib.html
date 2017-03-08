@@ -2,7 +2,20 @@
 {% block title %}Your Story{% endblock %}
 {% block header %}Your Story{% endblock %}
 
-{% block content %}<p>There once was a <b class="input">{{ color }}</b> <b class="input">{{ noun }}</b> sitting in the <b class="input">{{ place }}</b>. When <b class="input">{{ person }}</b> went to pick it up, it <b class="input">{{ verb }}</b> into flames in a totally <b class="input">{{ adjective }}</b> way.</p>
+{% block content %}
+  <p>There once was a <b class="input">{{ color }}</b> <b class="input">{{ noun }}</b> sitting in the <b class="input">{{ place }}</b>. When <b class="input">{{ person }}</b> went to pick it up, it <b class="input">{{ verb }}</b> into flames in a totally 
+
+  <b class="input">
+    {% for adjective in adjectives %}
+      {% if adjective == adjectives[-1] %}
+        and&nbsp;{{ adjective }}
+      {% elif adjective == adjectives[-2] %}
+        {{ adjective }}
+      {% else %}
+        {{ adjective }},
+      {% endif %}
+    {% endfor %}
+  </b> way.</p>
 {% endblock %}
 
 

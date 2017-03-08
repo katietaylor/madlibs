@@ -1,4 +1,25 @@
-<!doctype html>
+{% extends 'base.html' %}
+{% block title %}Your Story{% endblock %}
+{% block header %}Your Story{% endblock %}
+
+{% block content %}
+  <p>One day <b class="input">{{ person }}</b> was walking in the <b class="input">{{ place }}</b> when she saw a <b class="input">{{ color }}</b> <b class="input">{{ noun }}</b>. Being the 
+  
+  <b class="input">
+    {% for adjective in adjectives %}
+      {% if adjective == adjectives[-1] %}
+        and&nbsp;{{ adjective }}
+      {% elif adjective == adjectives[-2] %}
+        {{ adjective }}
+      {% else %}
+        {{ adjective }},
+      {% endif %}
+    {% endfor %}
+  </b> 
+
+  person that she is, she <b class="input">{{ verb }}</b>.</p>{% endblock %}
+
+<!-- <!doctype html>
 <html>
 <head>
   <title>Your Story</title>
@@ -12,3 +33,4 @@
 
 </body>
 </html>
+ -->
