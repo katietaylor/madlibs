@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <title>Madlibs</title>
+  <link rel="stylesheet" href="/static/madlibs.css">
+</head>
+<body>
+
+<h1>Welcome to Madlibs!</h1>
+<form action="/madlib">
+  Person: <input type="text" name="person" required><br><br>
+  Color: <select name="color" required>
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+    <option value="yellow">Yellow</option>
+  </select><br><br>
+  Noun: <input type="text" name="noun" required><br><br>
+  Adjective: <input type="text" name="adjective"><br><br>
+  Place: <input type="text" name="place"><br><br>
+  Past-Tense Verb: <input type="text" name="verb"><br><br>
+  <input type="submit">
+</form>
+
+</body>
+</html>
